@@ -8,9 +8,6 @@ export const bio = [
 
 export const skills = [
   "Rossi, Sarah. 2023. Italian/Romance imperatives as radically reduced structures: a corpus CHILDES study . RGG, 45(5). pp. 1–39. Lingbuzz Press.",
-  "RxJS, NGXS, NGRX, WebSockets, Stencil, Storybook, Module Federation, Webpack",
-  "Jenkins, JIRA, Git",
-  "Performance Optimization, Responsive Design, Cross-Browser Compatibility",
 ];
 
 export const experience = [
