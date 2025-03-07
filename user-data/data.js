@@ -2,7 +2,7 @@ export const bio = [
   "Hello, I'm Sarah Rossi!",
   "🌸 I am a PhD Student in <strong>Theoretical and Experimental Linguistics</strong> at IUSS Pavia, Italy.",
   "🌸 I’m interested in natural language syntax and currently working on the morphosyntax of imperatives and expletive negation, also from a first language acquisition perspective.",
-  "🌸 How to reach me: sarah.rossi@iusspavia.it. Feel free to drop me an email!"
+  "🌸 How to reach me: sarah.rossi@iusspavia.it. Feel free to drop me an email!",
   "🌸 Pronouns: she/her",
 ];
 
