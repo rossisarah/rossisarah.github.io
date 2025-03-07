@@ -1,12 +1,13 @@
 export const bio = [
-  "Hello, I'm Vinay Somawat!",
-  "<strong>Frontend Software Engineer</strong> with 4+ years of experience building scalable, user-focused web applications.",
-  "Skilled in Angular, TypeScript, and performance optimization, I aim to leverage my expertise in delivering innovative solutions that drive measurable business outcomes.",
-  "Passionate about mentoring, teamwork, and continuous improvement in engineering processes.",
+  "Hello, I'm Sarah Rossi!",
+  "🌸 I am a PhD Student in <strong>Theoretical and Experimental Linguistics</strong> at IUSS Pavia, Italy.",
+  "🌸 I’m interested in natural language syntax and currently working on the morphosyntax of imperatives and expletive negation, also from a first language acquisition perspective.",
+  "🌸 How to reach me: sarah.rossi@iusspavia.it. Feel free to drop me an email!"
+  "🌸 Pronouns: she/her",
 ];
 
 export const skills = [
-  "JavaScript, TypeScript, Angular, AngularJS, React, HTML5, CSS, Bootstrap, Tailwind CSS",
+  "Rossi, Sarah. 2023. Italian/Romance imperatives as radically reduced structures: a corpus CHILDES study . RGG, 45(5). pp. 1–39. Lingbuzz Press.",
   "RxJS, NGXS, NGRX, WebSockets, Stencil, Storybook, Module Federation, Webpack",
   "Jenkins, JIRA, Git",
   "Performance Optimization, Responsive Design, Cross-Browser Compatibility",
