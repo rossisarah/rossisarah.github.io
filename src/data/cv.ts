@@ -127,7 +127,7 @@ export const publications = [
     journal: "Proceedings of CLiC-it 2024, pp. 382–389",
     time: "2024",
 	selected: false,
-    abstract: "",
+    abstract: ".",
     link: "https://aclanthology.org/2024.clicit-1.46.pdf"
   },
   {
