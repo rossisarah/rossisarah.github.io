@@ -4,7 +4,6 @@ import {profile} from '../../settings'
 import SocialIcons from './SocialIcons.astro'
 import ProfilePictures from '@/assets/profilepic.jpeg'
 import { getCollection } from 'astro:content'
-import { template } from '@/settings'
 
 const isBlogPopulated = await getCollection('blog').then(collection => collection.length > 0)
 
@@ -31,26 +30,26 @@ const {fullName, title} = profile
 			<div class='mx-4 mt-16'>
 				<ul class='space-y-4 menu grow shrink menu-md overflow-y-auto'>
 					<li>
-                        <a href={`${template.base}/`} class='text-lg'>Home</a>
+                        <a href="/" class='text-lg'>Home</a>
 					</li>
 					 <li>
-    				<a href={`${template.base}/education`} class='text-lg'>Education</a>
+    				<a href="/education" class='text-lg'>Education</a>
   					</li>
 					<li>
-                        <a href={`${template.base}/cv`} class='text-lg'>CV</a>
+                        <a href="/cv" class='text-lg'>CV</a>
                     </li>
 					<li>
-                        <a href={`${template.base}/papers`} class='text-lg'>Papers</a>
+                        <a href="/papers" class='text-lg'>Papers</a>
 					</li>
 					<li>
-  <a href={`${template.base}/talks`} class="text-lg">Talks & Posters</a>
+  <a href="/talks" class="text-lg">Talks & Posters</a>
 </li>
 
 					
 					
                     {isBlogPopulated &&
 					<li>
-                        <a href={`${template.base}/blog/1`} class='text-lg'>Blog</a>
+                        <a href="/blog/1" class='text-lg'>Blog</a>
 </li>
                     }
 				</ul>
