@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Astro Academia Documentation
 
 ## What is Astro Academia?
@@ -100,3 +101,13 @@ Once you have added the new blog post, it will be automatically included in the 
 
 ## Deploy
 The template provides a workflow to deploy the website on Github pages as a static website.
+=======
+## Hi there 👋
+
+<!--
+**rossisarah/rossisarah** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+Here are some ideas to get you started:
+
+
+>>>>>>> 301d3be611b140eb97a66e632b926b6ed92e6f41
