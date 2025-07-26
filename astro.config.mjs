@@ -11,6 +11,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
     integrations: [react(), tailwind(), sitemap()],
-    site: template.website_url,
-    base: template.base,
+    site: 'https://rossisarah.github.io',
+    base: '/', // se il repo si chiama rossisarah.github.io
+    // Mantieni le altre configurazioni dal template se necessarie
 });

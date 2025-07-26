@@ -1,0 +1,180 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const talks = [
+  {
+    title: "Directive Force meets Genericity: A Cartographic Approach to Two Types of Italian Negative Imperatives with Infinitival Morphology",
+    conference: "6th International Workshop on Syntactic Cartography",
+    location: "Hong Kong",
+    date: "October 2025"
+  },
+  {
+    title: "The Acquisition of Infinitival Imperatives: A Corpus Study on Early Italian",
+    conference: "22nd STaPs",
+    location: "Budapest/Innsbruck/Tübingen",
+    date: "April 2025"
+  },
+  {
+    title: "The Syntax of Expletive Negation in (Social-Media) English: the Case of ‘Not-Me Sentences’",
+    conference: "Workshop on Functional Categories, Dimensions of Meaning, and Expletiveness",
+    location: "Barcelona, Spain",
+    date: "June 2024",
+    note: "with Cristiano Chesi and Matteo Greco"
+  },
+  {
+    title: "The Syntax of Expletive Negation in (Social-Media) English: the Case of ‘Not-Me Sentences’",
+    conference: "33rd Colloquium on Generative Grammar (CGG33)",
+    location: "Alcalá de Henares, Madrid, Spain",
+    date: "May 2024",
+    note: "with Cristiano Chesi and Matteo Greco"
+  },
+  {
+    title: "The Acquisition of Italian Imperatives: A Corpus Study on CHILDES and Notes on the Location of the Jussive Head",
+    conference: "16th Brussels Conference on Generative Linguistics",
+    location: "Brussels, Belgium",
+    date: "October 2023"
+  },
+  {
+    title: "The Acquisition of Imperatives: A Corpus Study on Italian",
+    conference: "The Romance Turn",
+    location: "Madrid, Spain",
+    date: "September 2023"
+  },
+  {
+    title: "Italian/Romance Imperatives as Computationally-Light, Reduced Structures: A Corpus Study on CHILDES",
+    conference: "ColDoc SFL 2023",
+    location: "Paris, France",
+    date: "July 2023"
+  },
+  {
+    title: "Italian/Romance Imperatives as Radically Reduced Structures: A Corpus Study on CHILDES",
+    conference: "53rd Linguistic Symposium on Romance Languages (LSRL 53)",
+    location: "Paris, France",
+    date: "July 2023"
+  },
+  {
+    title: "Italian/Romance Imperatives as Radically Reduced Structures: A Corpus Study on CHILDES",
+    conference: "Rencontres Autour de la Linguistique Formelle (RALFE 2023)",
+    location: "Nice, France",
+    date: "June 2023"
+  }
+];
+
+const posters = [
+  {
+    title: "Imperativi Non-Canonici: il caso degli \"Imperativi Difficili\"",
+    conference: "XLIX Convegno Annuale SIG (Società Italiana di Glottologia)",
+    location: "Milan, Italy",
+    date: "October 2025",
+    note: "with Guido Formichi"
+  },
+  {
+    title: "Acquisition in Babies and Machines: Comparing the Learning Trajectories of LMs in Terms of Syntactic Structures (ATTracTSS Test Set)",
+    conference: "11th Italian Conference on Computational Linguistics (CLiC-it 2025)",
+    location: "Cagliari, Italy",
+    date: "September 2025",
+    note: "with Guido Formichi, Sofia Neri, Tommaso Sgrizzi, Asya Zanollo, Veronica Bressan, Cristiano Chesi"
+  },
+  {
+    title: "BLiMP-IT: Harnessing Automatic Minimal Pair Generation for Italian Language Model Evaluation",
+    conference: "11th Italian Conference on Computational Linguistics (CLiC-it 2025)",
+    location: "Cagliari, Italy",
+    date: "September 2025",
+    note: "with Matilde Barbini, Maria Letizia Piccini Bianchessi, Veronica Bressan, Achille Fusco, Sofia Neri, Tommaso Sgrizzi and Cristiano Chesi"
+  },
+  {
+    title: "Negative and Infinitival Imperatives in Italian: A Rare Phenomenon in Early Child Speech",
+    conference: "Child Language Symposium 2025",
+    location: "Reading, UK",
+    date: "September 2025"
+  },
+  {
+    title: "Large Language Models Assessment through Linguistically Motivated Contrasts: A Benchmark for Italian (BLiMP-IT)",
+    conference: "GLOW 47",
+    location: "",
+    date: "March 2025",
+    note: "with Veronica Bressan, Matilde Barbini, Achille Fusco, Sofia Neri, Maria Letizia Piccini Bianchessi, Cristiano Chesi"
+  },
+  {
+    title: "BLiMP-IT: An Italian Linguistic Benchmark for Large Language Models",
+    conference: "50th Incontro di Grammatica Generativa (IGG50)",
+    location: "Padova, Italy",
+    date: "February 2025",
+    note: "with Veronica Bressan, Matilde Barbini, Achille Fusco, Sofia Neri, Maria Letizia Piccini Bianchessi, Cristiano Chesi"
+  }
+];
+
+const workshops = [
+  {
+    title: "The Morphosyntax of Imperative Clauses and their Acquisition: A View from Romance and Beyond",
+    conference: "21st STaPs",
+    location: "Augsburg/Budapest/Vienna, online",
+    date: "February 2024"
+  }
+];
+
+const invited = [
+  {
+    title: "Italian/Romance imperatives as radically reduced structures",
+    conference: "CISCL Seminar, University of Siena",
+    location: "Siena, Italy",
+    date: "February 2024"
+  }
+];
+---
+
+<Layout title="Talks & Posters">
+  <div class="prose max-w-none">
+
+  
+    <h1 class="text-3xl font-bold mb-8">Talks & Posters </h1>
+
+    <p class="mt-8 italic text-center text-lg text-base-content/70">
+      I'll be happy to share materials and slides,
+      <a href="mailto:sarah.rossi@iusspavia.it" class="underline text-accent">reach out</a>!
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-6">Talks</h2>
+    <div class="space-y-6">
+      {talks.map(item => (
+        <div class="p-6 rounded-lg text-base-content bg-base-200">
+          <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
+          <p>{item.conference}, {item.location} • {item.date}</p>
+          {item.note && <p class="italic text-sm">{item.note}</p>}
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-semibold mt-12 mb-6">Posters</h2>
+    <div class="space-y-6">
+      {posters.map(item => (
+        <div class="p-6 rounded-lg text-base-content bg-base-200">
+          <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
+          <p>{item.conference}, {item.location} • {item.date}</p>
+          {item.note && <p class="italic text-sm">{item.note}</p>}
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-semibold mt-12 mb-6">Workshops</h2>
+    <div class="space-y-6">
+      {workshops.map(item => (
+        <div class="p-6 rounded-lg text-base-content bg-base-200">
+          <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
+          <p>{item.conference}, {item.location} • {item.date}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-semibold mt-12 mb-6">Invited Talks</h2>
+    <div class="space-y-6">
+      {invited.map(item => (
+        <div class="p-6 rounded-lg text-base-content bg-base-200">
+          <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
+          <p>{item.conference}, {item.location} • {item.date}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</Layout>

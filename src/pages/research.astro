@@ -8,7 +8,7 @@ import {RESEARCH_ICONS} from "@/data/researchIcons";
 const { research_areas } = profile;
 ---
 
-<Layout title="Research | Dr. Marie Curie">
+<Layout title="Research">
   <div class="prose max-w-none">
     <h1 class="text-3xl font-bold mb-8">Research Statement</h1>
 
@@ -21,34 +21,21 @@ const { research_areas } = profile;
       </p>
     </div>
 
-    <h2 class="text-2xl font-bold mb-6">Research Areas</h2>
-    <div class="grid gap-8 mb-12">
-      {
-        research_areas.map((area) => (
-          <div class="flex gap-6 items-start">
-            <BetterIcon>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                class="size-6 stroke-accent"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d={RESEARCH_ICONS[area.field as keyof typeof RESEARCH_ICONS]?.path || RESEARCH_ICONS['computer-science'].path}
-                />
-              </svg>
-            </BetterIcon>
-            <div>
-              <h3 class="text-xl font-semibold mb-2">{area.title}</h3>
-              <p class="text-base">{area.description}</p>
+<h2 class="text-2xl font-bold mb-6">Research Areas</h2>
+<div class="grid gap-8 mb-12">
+  {research_areas.map((area) => (
+    <div class="flex gap-6 items-start" key={area.title}>
+      <BetterIcon>
+        {/* icona SVG */}
+      </BetterIcon>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">{area.title}</h3>
+        <div class="space-y-1 text-base">
+          <p class="text-base">{area.description}</p>
             </div>
           </div>
-        ))
-      }
-    </div>
+ </div> // qui chiudo il div mancante
+))} 
 
     <List listTitle="Current Projects" listItems={[
       {

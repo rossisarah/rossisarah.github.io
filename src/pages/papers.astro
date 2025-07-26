@@ -2,15 +2,17 @@
 import Layout from "@/layouts/Layout.astro";
 import { publications } from "@/data/cv";
 import { highlightAuthor } from "@/lib/utils";
-import {template} from "@/settings";
+import { template } from "@/settings";
 
 const ALL_PAPERS = publications; // This will be replaced with dynamic data later
 ---
 
-<Layout title="Papers">
+<Layout title="Publications">
   <div class="prose max-w-none">
     <h1 class="text-3xl font-bold mb-8">Publications</h1>
-
+<p class="mt-8 italic text-center text-lg text-base-content/70">
+      If you want any papers not (yet) available online, feel free to <a href="mailto:sarah.rossi@iusspavia.it" class="underline text-accent">contact me</a> and I’ll gladly send them to you!
+    </p>
     <div class="space-y-8">
       {
         ALL_PAPERS.map((paper) => (
@@ -39,6 +41,8 @@ const ALL_PAPERS = publications; // This will be replaced with dynamic data late
         ))
       }
     </div>
+
+    
 
     <div class="flex justify-center mt-8">
       <div class="join">

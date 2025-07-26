@@ -1,89 +1,48 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import { experiences, education, skills, publications } from '../data/cv'
-import CvTimeline from '@/components/ui/CvTimeline.astro'
-
-import type { Experience, Education, Publication } from '../types/cv'
-import List from '@/components/ui/List.astro'
-import PublicationsList from '@/components/ui/PublicationsList.astro'
-
-let orderdExperiences: Experience[] = []
-let orderdEducations: Education[] = []
-let orderedPublications: Publication[] = []
-
-const orderElement = <T extends { time: string }>(a: T, b: T) => {
-  const presentValues = ['present', 'now', 'current', 'today']
-  if (
-			presentValues.includes(
-				(a['time'] as string)?.split(' - ')[1]?.toLowerCase()
-			)
-		) {
-			// If the date is 'present', it should be the first element
-			return -1
-		}
-		const dateA = new Date((a['time'] as string)?.split(' - ')[1])
-		const dateB = new Date((b['time'] as string)?.split(' - ')[1])
-		return dateB.getTime() - dateA.getTime()
-}
-
-if (experiences.length > 0) {
-	orderdExperiences = experiences.sort((a, b) => {
-		return orderElement(a, b)
-	})
-}
-
-if (education.length > 0) {
-	orderdEducations = education.sort((a, b) => {
-		return orderElement(a, b)
-	})
-}
-
-if (publications.length > 0) {
-	orderedPublications = publications.sort((a, b) => {
-		return orderElement(a, b)
-	})
-}
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout>
-	{
-		orderdEducations.length > 0 && (
-			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Education
-				</h2>
-				<CvTimeline elements={orderdEducations} colored={true} />
-			</section>
-		)
-	}
+<Layout title="CV">
+  <div class="prose max-w-none text-center mt-20">
+    <h1 class="text-3xl font-bold mb-8">
+      Download my full CV here 📄
+    </h1>
+    <a
+      href="/files/Sarah_Rossi_CV_July2025.pdf"
+      class="btn btn-primary btn-lg"
+      download
+    >
+      Download CV
+    </a>
+  </div>
 
-	{
-		orderdExperiences.length > 0 && (
-			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Experiences
-				</h2>
-				<CvTimeline elements={orderdExperiences} colored={true} />
-			</section>
-		)
-	}
+  {/* 
+  --- codice pronto da riattivare ---
 
-	{
-		orderdEducations.length > 0 && (
-			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Last publications
-				</h2>
-				<PublicationsList elements={orderedPublications}/>
-			</section>
-		)
-	}
+  import { experiences, education, skills, publications } from "@/data/cv";
 
-	{
-		skills.length > 0 && (
-			<section class='mb-12'>
-				<List listTitle='Skills' listItems={skills}/>
-			</section>
-		)
-	}
+  <ul class='timeline timeline-snap-icon max-md:timeline-compact timeline-vertical'>
+    {
+      education.map((element, index) => (
+        <li>
+          <div class='timeline-middle'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' class:list={[{ 'text-accent': true }, 'h-5 w-5']}>
+              <path fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z' clip-rule='evenodd' />
+            </svg>
+          </div>
+          <div class={`${index % 2 === 0 ? 'timeline-start' : 'timeline-end'} mb-10 md:text-end`}>
+            <time class='font-mono italic'>{element.time}</time>
+            <div class='text-lg font-black'>{element.degree}</div>
+            <div>{element.thesis}</div>
+            <div><strong>Supervisor:</strong> {element.supervisor} {element.coSupervisor ? `; Co-supervisor: ${element.coSupervisor}` : ''}</div>
+            <div>{element.institution}</div>
+            <div>{element.location}</div>
+          </div>
+          <hr class='bg-accent' />
+        </li>
+      ))
+    }
+  </ul>
+
+  */}
 </Layout>

@@ -3,15 +3,30 @@ import Layout from '../layouts/Layout.astro'
 
 import { profile } from '@/settings'
 import { publications } from '@/data/cv'
-import ProfilePictures from '@/assets/profile_pictures.jpg'
+import ProfilePictures from '@/assets/me1.jpeg'
 import Hero from '@/components/ui/Hero.astro'
 import Grid from '@/components/ui/Grid.astro'
 import ArticleList from '@/components/ui/ArticleList.astro'
 
 const { fullName, title, institute, research_areas } = profile
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Selected Publications 
+const selectedPublications = publications.filter(p => p.selected)
+
+// News Items
+const newsItems = [
+  {
+    title: "Talk accepted at the 6th International Workshop on Syntactic Cartography",
+    date: "July 2025",
+    summary: "I'll be presenting my work on Italian negative and generic imperatives in Hong Kong this October.",
+    link: "/talks"
+  },
+  {
+    title: "Website launched 🎉",
+    date: "July 2025",
+    summary: "Excited to share my new academic website! Built with Astro + Tailwind CSS.",
+  }
+]
 ---
 
 <Layout>
@@ -19,19 +34,34 @@ const { fullName, title, institute, research_areas } = profile
 	<section class='flex items-center gap-12 border-b pb-12'>
 		<Hero
 			fullName={fullName}
-			title={title}
 			institute={institute}
 			profilePicture={ProfilePictures}
 		/>
 	</section>
 
-	<!-- Research Areas -->
+	<!-- Research Interests -->
 	<section class='py-12 border-b'>
-		<Grid gridTitle='Research Areas' gridItems={research_areas} />
+		<Grid gridTitle='Research Interests' gridItems={research_areas} />
 	</section>
 
-	<!-- Recent Publications -->
+	<!-- Selected Publications -->
 	<section class='py-12 border-t'>
-		<ArticleList listTitle='Recent Publications' listItems={publications} />
+		<ArticleList listTitle='Selected Publications' listItems={selectedPublications} />
+		<a href="/papers" class="block mt-4 text-accent underline">See all publications →</a>
+	</section>
+
+	<!-- News Section -->
+	<section class='py-12 border-t'>
+		<h2 class="text-3xl font-bold mb-8">News</h2>
+		<div class="space-y-6">
+			{newsItems.map(item => (
+				<div class="p-4 rounded-lg bg-base-200 text-base-content">
+					<h3 class="text-lg font-semibold">{item.title}</h3>
+					<p class="text-sm text-base-content/70">{item.date}</p>
+					<p class="mt-1">{item.summary}</p>
+					{item.link && <a href={item.link} class="text-accent underline">Read more</a>}
+				</div>
+			))}
+		</div>
 	</section>
 </Layout>

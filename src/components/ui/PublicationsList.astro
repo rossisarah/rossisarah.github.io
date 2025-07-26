@@ -1,44 +1,123 @@
 ---
-import { isSkill } from '@/types/cv';
-import type { Skill, Publication } from '@/types/cv';
-import { highlightAuthor } from '@/lib/utils'
-
-interface Props {
-	elements: (Skill | Publication)[]
+interface Publication {
+  title: string;
+  authors: string[];
+  journal: string;
+  year?: number | 'Submitted' | 'Forthcoming';
+  link?: string;
+  type: string;
 }
 
-const { elements } = Astro.props
+const publications: Publication[] = [
+  // Peer-reviewed journal articles
+  {
+    title: "The syntax of Expletive Negation in (colloquial) English: the case of ‘not-ACC-ing constructions’.",
+    authors: ["Sarah Rossi", "Cristiano Chesi", "Matteo Greco"],
+    journal: "Submitted to English Language and Linguistics, Cambridge University Press.",
+    year: "Submitted",
+    type: "journal",
+  },
+  {
+    title: "From Recursion to Incrementality: Return to Recurrent Neural Networks.",
+    authors: ["Cristiano Chesi", "Veronica Bressan", "Matilde Barbini", "Achille Fusco", "Maria Letizia Piccini Bianchessi", "Sofia Neri", "Sarah Rossi", "Tommaso Sgrizzi"],
+    journal: "In Linguistic Vanguard.",
+    year: "Forthcoming",
+    type: "journal",
+  },
+  {
+    title: "Not-ACC-ing and not-NOM-that constructions: A Comparative Study of English and Italian Expletive Negation.",
+    authors: ["Sarah Rossi", "Cristiano Chesi", "Matteo Greco"],
+    journal: "Catalan Journal of Linguistics, 1--37",
+    year: 2025,
+    link: "https://doi.org/10.5565/rev/catjl.496",
+    type: "journal",
+  },
+  {
+    title: "Italian/Romance imperatives as radically reduced structures: a corpus CHILDES study.",
+    authors: ["Sarah Rossi"],
+    journal: "Rivista di Grammatica Generativa, 45(5), pp. 1--39",
+    year: 2023,
+    link: "https://lingbuzz.com/j/rgg/2023/2023.05/",
+    type: "journal",
+  },
+  // Peer-reviewed proceedings
+  {
+    title: "Acquisition in Babies and Machines: Comparing the Learning Trajectories of LMs in Terms of Syntactic Structures (ATTracTSS Test Set).",
+    authors: ["Sarah Rossi", "Guido Formichi", "Sofia Neri", "Tommaso Sgrizzi", "Asya Zanollo", "Veronica Bressan", "Cristiano Chesi"],
+    journal: "In Proceedings of the 11th Italian Conference on Computational Linguistics (CLiC-it 2025).",
+    year: "Forthcoming",
+    type: "proceedings",
+  },
+  {
+    title: "BLiMP-IT: Harnessing Automatic Minimal Pair Generation for Italian Language Model Evaluation.",
+    authors: ["Matilde Barbini", "Maria Letizia Piccini Bianchessi", "Veronica Bressan", "Achille Fusco", "Sarah Rossi", "Sofia Neri", "Tommaso Sgrizzi", "Cristiano Chesi"],
+    journal: "In Proceedings of the 11th Italian Conference on Computational Linguistics (CLiC-it 2025).",
+    year: 2025,
+    type: "proceedings",
+  },
+  {
+    title: "Current linguistic changes in contemporary Italian: the cases of non io che and essere tipo.",
+    authors: ["Sarah Rossi", "Tommaso Sgrizzi"],
+    journal: "In Proceedings of ConSOLE XXXIII.",
+    year: "Forthcoming",
+    type: "proceedings",
+  },
+  {
+    title: "Different Ways to Forget: Linguistic Gates in Recurrent Neural Networks.",
+    authors: ["Cristiano Chesi", "Veronica Bressan", "Matilde Barbini", "Achille Fusco", "Maria Letizia Piccini Bianchessi", "Sofia Neri", "Sarah Rossi", "Tommaso Sgrizzi"],
+    journal: "In The Proceedings of the 2nd BabyLM Challenge at CoNLL 2024",
+    year: 2024,
+    link: "https://aclanthology.org/2024.conll-babylm.9.pdf",
+    type: "proceedings",
+  },
+  {
+    title: "Recurrent Networks are (Linguistically) Better? An Experiment on Small-LM Training on Child-Directed Speech in Italian.",
+    authors: ["Achille Fusco", "Matilde Barbini", "Maria Letizia Piccini Bianchessi", "Veronica Bressan", "Sofia Neri", "Sarah Rossi", "Tommaso Sgrizzi", "Cristiano Chesi"],
+    journal: "In Proceedings of CLiC-it 2024",
+    year: 2024,
+    link: "https://aclanthology.org/2024.clicit-1.46.pdf",
+    type: "proceedings",
+  },
+  {
+    title: "Language Models Assessment through Linguistically Motivated Contrasts: a benchmark for Italian (BLiMP-IT).",
+    authors: ["Veronica Bressan", "Matilde Barbini", "Achille Fusco", "Sofia Neri", "Maria Letizia Piccini Bianchessi", "Sarah Rossi", "Cristiano Chesi"],
+    journal: "In Proceedings of GLOW 47.",
+    year: "Forthcoming",
+    type: "proceedings",
+  },
+]
+
+// Utility to join authors with commas, highlighting the last one with "and"
+function formatAuthors(authors: string[]) {
+  if (authors.length === 1) return authors[0]
+  return authors.slice(0, -1).join(", ") + " and " + authors[authors.length - 1]
+}
+
+// Badge style for Submitted/Forthcoming
+const badgeClasses = "inline-block px-2 py-0.5 text-xs font-semibold rounded-full text-white bg-indigo-600 ml-2"
+
 ---
-<ul class='space-y-8'>
-  {elements.map((element, index) => (
-    <li class='group'>
-      { isSkill(element)
-        ? <>
-        <h3 class='text-lg font-bold mb-2'>{element.title}</h3>
-        <p>{element.description}</p>
-        </> : <>
+
+<ul class="space-y-10">
+  {publications.map((pub) => (
+    <li>
       <a
-        href={element.link as string}
-        class='block hover:text-accent transition-colors duration-200'
-        target='_blank'
+        href={pub.link ?? "#"}
+        target={pub.link ? "_blank" : undefined}
+        rel={pub.link ? "noopener noreferrer" : undefined}
+        class="hover:text-indigo-700 transition-colors duration-200 font-semibold text-lg"
       >
-        <h3 class='text-lg font-bold mb-2'>{element.title}</h3>
+        {pub.title}
       </a>
-      <p class='text-base mb-2'>
-        <span class='font-medium'>Authors:</span>{' '}
-        <span
-          set:html={highlightAuthor(element.authors as string)}
-        />
+      {pub.year === "Submitted" && <span class={badgeClasses}>Submitted</span>}
+      {pub.year === "Forthcoming" && <span class={badgeClasses}>Forthcoming</span>}
+      <p class="mt-1 text-sm text-gray-700 dark:text-gray-300">
+        <strong>Authors:</strong> {formatAuthors(pub.authors)}
       </p>
-      <p class='text-sm mb-3'>
-        <span class='italic'>{element.journal}</span> •{' '}
-        {element.time}
-      </p>
-      <p>{element.abstract}</p>
-      </>
-    }
-    {/* Uncomment this line to add a small border bottom for each element
-    {index !== elements.length -1 && <hr class="mt-6 border-primary/40" />}  */}
+      <p class="text-sm italic text-gray-600 dark:text-gray-400">{pub.journal}</p>
+      {typeof pub.year === "number" && (
+        <p class="text-xs text-gray-500 mt-0.5">Year: {pub.year}</p>
+      )}
     </li>
   ))}
 </ul>

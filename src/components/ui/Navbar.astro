@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import {profile} from '../../settings'
 import SocialIcons from './SocialIcons.astro'
-import ProfilePictures from '@/assets/profile_pictures.jpg'
+import ProfilePictures from '@/assets/profilepic.jpeg'
 import { getCollection } from 'astro:content'
 import { template } from '@/settings'
 
@@ -21,22 +21,33 @@ const {fullName, title} = profile
 					src={ProfilePictures}
 					alt={`Profile picture of ${fullName}`}
 				/>
-				<h1 class="text-lg font-black mt-8 hidden lg:block">{title} <span>{fullName}</span></h1>
+				<h1 class="mt-8 hidden lg:block text-center text-lg">
+  <span class="font-bold block">{fullName}</span>
+  <span class="font-normal block">{title}</span>
+</h1>
+
+
 			</div>
 			<div class='mx-4 mt-16'>
 				<ul class='space-y-4 menu grow shrink menu-md overflow-y-auto'>
 					<li>
                         <a href={`${template.base}/`} class='text-lg'>Home</a>
 					</li>
+					 <li>
+    				<a href={`${template.base}/education`} class='text-lg'>Education</a>
+  					</li>
 					<li>
-                        <a href={`${template.base}/research`} class='text-lg'>Research</a>
-					</li>
+                        <a href={`${template.base}/cv`} class='text-lg'>CV</a>
+                    </li>
 					<li>
                         <a href={`${template.base}/papers`} class='text-lg'>Papers</a>
 					</li>
 					<li>
-                        <a href={`${template.base}/cv`} class='text-lg'>CV</a>
-                    </li>
+  <a href={`${template.base}/talks`} class="text-lg">Talks & Posters</a>
+</li>
+
+					
+					
                     {isBlogPopulated &&
 					<li>
                         <a href={`${template.base}/blog/1`} class='text-lg'>Blog</a>
