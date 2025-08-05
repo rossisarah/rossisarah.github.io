@@ -7,6 +7,7 @@ import Scholar from '@/assets/social-icons/google-scholar.svg'
 import X from '@/assets/social-icons/x-twitter.svg'
 import Inspire from '@/assets/social-icons/inspire.svg'
 import Arxiv from '@/assets/social-icons/arxiv.svg'
+import Academia from '@/assets/social-icons/academia.svg'
 
 import { social } from '@/settings'
 
@@ -80,4 +81,11 @@ const calculatedContainerSize = activeSocial.length <= 5 ? 'size-12' : activeSoc
 			<Arxiv class={calculatedIconSize} fill="currentColor" />
 		</a>
 	}
+
+{social.academia !== '' && (
+  <a href={social.academia} target="_blank" class={`${calculatedContainerSize} inline-flex items-center justify-center rounded-xl hover:bg-primary/20 transition-all duration-300`}>
+    <Academia class={calculatedIconSize} fill="currentColor" />
+  </a>
+)}
+
 </div>

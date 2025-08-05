@@ -13,13 +13,14 @@ export const profile = {
 // Set equal to an empty string to hide the icon that you don't want to display
 export const social = {
 	email: 'sarah.rossi@iusspavia.it',
-	linkedin: 'https://www.linkedin.com/in/sarah-rossi-b22260341',
+	linkedin: 'https://www.linkedin.com/in/sarah-rossi-b22260341/',
 	x: '',
 	github: '',
 	gitlab: '',
 	scholar: 'https://scholar.google.com/citations?hl=it&authuser=1&user=PKbZLGsAAAAJ',
 	inspire: '',
 	arxiv: '',
+	academia: 'https://iusspavia.academia.edu/SarahRossi'
 }
 
 export const template = {
