@@ -62,22 +62,22 @@ export const publications = [
     title: "Acquisition in Babies and Machines: Comparing the Learning Trajectories of LMs in Terms of Syntactic Structures (ATTracTSS Test Set).",
     authors: "Sarah Rossi, Guido Formichi, Sofia Neri, Tommaso Sgrizzi, Asya Zanollo, Veronica Bressan, Cristiano Chesi",
     journal: "Proceedings of the 11th Italian Conference on Computational Linguistics (CLiC-it 2025)",
-    time: "Forthcoming",
+    time: "2025",
 	selected: false,
     abstract: "",
-    link: "#"
+    link: "https://clic2025.unica.it/wp-content/uploads/2025/09/93_main_long.pdf"
   },
   {
     title: "BLiMP-IT: Harnessing Automatic Minimal Pair Generation for Italian Language Model Evaluation.",
     authors: "Matilde Barbini, Maria Letizia Piccini Bianchessi, Veronica Bressan, Achille Fusco, Sarah Rossi, Sofia Neri, Tommaso Sgrizzi, Cristiano Chesi",
     journal: "Proceedings of the 11th Italian Conference on Computational Linguistics (CLiC-it 2025)",
-    time: "Forthcoming",
+    time: "2025",
 	selected: false,
     abstract: "",
-    link: "#"
+    link: "https://clic2025.unica.it/wp-content/uploads/2025/09/7_main_long.pdf"
   },
   {
-    title: "Current linguistic changes in contemporary Italian: the cases of *non io che* and *essere tipo*.",
+    title: "Current linguistic changes in contemporary Italian: the cases of 'non io che' and 'essere tipo'.",
     authors: "Sarah Rossi, Tommaso Sgrizzi",
     journal: "Proceedings of ConSOLE XXXIII",
     time: "Forthcoming",
