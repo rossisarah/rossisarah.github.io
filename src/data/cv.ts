@@ -21,7 +21,7 @@ export const education = [
     location: "Pavia, Italy",
     degree: "PhD in Theoretical and Experimental Linguistics",
     time: "Dec 2022 – Present",
-    thesis: "When not all clauses are CPs: the Morphosyntax of Italian/Romance Imperatives (in prep).",
+    thesis: "Imperatives as Radically Reduced Clauses: Morphosyntax, Acquisition, and the Syntax-Semantics Interface (submitted).",
     supervisor: "Prof. Cristiano Chesi",
     coSupervisor: "Prof. Adriana Belletti"
   },
@@ -57,13 +57,39 @@ export const skills = [
 ];
 
 export const publications = [
-
+{
+    title: "Italian Rhetorical Imperatives at the Syntax-Semantics Interface.",
+    authors: "Sarah Rossi, Guido Formichi",
+    journal: "Isogloss, Special Volume: Going Romance 2025",
+    time: "Submitted",
+    selected: false,
+    abstract: "",
+    link: "#"
+  },
+  {
+    title: "The syntax of Expletive Negation in English: the case of 'not-ACC-ing constructions'.",
+    authors: "Sarah Rossi, Cristiano Chesi, Matteo Greco",
+    journal: "English Language and Linguistics, Cambridge University Press, 1–23",
+    time: "2026",
+    selected: true,
+    abstract: "",
+    link: "https://doi.org/10.1017/S136067432510066X"
+  },
+  {
+    title: "From Recursion to Incrementality: Return to Recurrent Neural Networks.",
+    authors: "Cristiano Chesi, Veronica Bressan, Matilde Barbini, Achille Fusco, Maria Letizia Piccini Bianchessi, Sofia Neri, Sarah Rossi, Tommaso Sgrizzi",
+    journal: "Linguistic Vanguard",
+    time: "2026",
+    selected: false,
+    abstract: "",
+    link: "https://doi.org/10.1515/lingvan-2024-0233"
+  },
   {
     title: "Acquisition in Babies and Machines: Comparing the Learning Trajectories of LMs in Terms of Syntactic Structures (ATTracTSS Test Set).",
     authors: "Sarah Rossi, Guido Formichi, Sofia Neri, Tommaso Sgrizzi, Asya Zanollo, Veronica Bressan, Cristiano Chesi",
     journal: "Proceedings of the 11th Italian Conference on Computational Linguistics (CLiC-it 2025)",
     time: "2025",
-	selected: false,
+	selected: true,
     abstract: "",
     link: "https://clic2025.unica.it/wp-content/uploads/2025/09/93_main_long.pdf"
   },
@@ -108,7 +134,7 @@ export const publications = [
     authors: "Sarah Rossi, Cristiano Chesi, Matteo Greco",
     journal: "Catalan Journal of Linguistics, 1–37",
     time: "2025",
-	selected: true,
+	selected: false,
     abstract: "",
     link: "https://doi.org/10.5565/rev/catjl.496"
   },
@@ -117,7 +143,7 @@ export const publications = [
     authors: "Cristiano Chesi, Veronica Bressan, Matilde Barbini, Achille Fusco, Maria Letizia Piccini Bianchessi, Sofia Neri, Sarah Rossi, Tommaso Sgrizzi",
     journal: "Proceedings of the 2nd BabyLM Challenge at CoNLL 2024, pp. 106–117",
     time: "2024",
-	selected: true,
+	selected: false,
     abstract: "",
     link: "https://aclanthology.org/2024.conll-babylm.9.pdf"
   },
