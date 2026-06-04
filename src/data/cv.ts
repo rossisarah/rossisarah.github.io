@@ -105,11 +105,11 @@ export const publications = [
   {
     title: "Current linguistic changes in contemporary Italian: the cases of 'non io che' and 'essere tipo'.",
     authors: "Sarah Rossi, Tommaso Sgrizzi",
-    journal: "Proceedings of ConSOLE XXXIII",
-    time: "Forthcoming",
+    journal: "Proceedings of ConSOLE XXXIII, pp. 180–200",
+    time: "2025",
 	selected: false,
     abstract: "",
-    link: "#"
+    link: "https://www.universiteitleiden.nl/binaries/content/assets/geesteswetenschappen/lucl/sole/console-xxxiii.pdf"
   },
   {
     title: "From Recursion to Incrementality: Return to Recurrent Neural Networks.",
