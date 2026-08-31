@@ -20,8 +20,8 @@ export const education = [
     institution: "University School for Advanced Studies IUSS Pavia",
     location: "Pavia, Italy",
     degree: "PhD in Theoretical and Experimental Linguistics",
-    time: "Dec 2022 – Present",
-    thesis: "Imperatives as Radically Reduced Clauses: Morphosyntax, Acquisition, and the Syntax-Semantics Interface (submitted).",
+    time: "Dec 2022 – July 2026",
+    thesis: "Imperatives as Radically Reduced Clauses: Morphosyntax, Acquisition, and the Syntax-Semantics Interface. PhD obtained with the grade 'Excellent'",
     supervisor: "Prof. Cristiano Chesi",
     coSupervisor: "Prof. Adriana Belletti"
   },
@@ -46,17 +46,30 @@ export const education = [
 
 
 export const skills = [
-	{
-		title: '',
-		description: '',
-	},
-	// {
-	// 	title: 'Experimental Techniques',
-	// 	description: 'Spectroscopy, Isolation of Radioactive Elements, Radiation Measurement',
-	// },
+  {
+    title: "Languages",
+    description: "Italian (native), Neapolitan (native, passive competence), Romagnol (native, lower passive competence), English (C2), French (C1), German (B2), Japanese (beginner), Esperanto (beginner), Spanish (beginner)."
+  },
+  {
+    title: "Programming Languages",
+    description: "R (intermediate), RStudio (intermediate), HTML (basic), Python (basic)."
+  },
+  {
+    title: "Software & Tools",
+    description: "CLAN (advanced), SketchEngine (advanced), UAM Corpus Tool (advanced), LaTeX (intermediate), Overleaf (advanced), Microsoft Word (advanced), Excel (advanced), Astro (intermediate)."
+  }
 ];
 
 export const publications = [
+  {
+    title: "Imperatives as Radically Reduced Clauses: Morphosyntax, Acquisition, and the Syntax-Semantics Interface.",
+    authors: "Sarah Rossi",
+    journal: "PhD Dissertation, University School for Advanced Studies IUSS Pavia",
+    time: "2026",
+    selected: true,
+    abstract: "",
+    link: "https://lingbuzz.net/lingbuzz/010185"
+  },
 {
     title: "Italian Rhetorical Imperatives at the Syntax-Semantics Interface.",
     authors: "Sarah Rossi, Guido Formichi",
