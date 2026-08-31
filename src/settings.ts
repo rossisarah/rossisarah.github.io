@@ -1,12 +1,12 @@
 export const profile = {
 	fullName: 'Sarah Rossi',
-	title: 'PhD Candidate in Theoretical and Experimental Linguistics',
+	title: 'PhD in Theoretical and Experimental Linguistics',
 	institute: '',
 	author_name: 'Sarah Rossi', // Author name to be highlighted in the papers section
 	research_areas: [
 		{ title: 'Theoretical syntax', description: 'Morphosyntax of imperatives, exploring the hypothesis that they are radically reduced structures ● Analysis of expletive vs. standard negation.', field: 'Theoretical Syntax' },
 		{ title: 'Language Acquisition', description: 'Development of L1 grammar investigated through corpus studies and computational approaches ● Acquisition in Children vs. Learning in Machines.', field: 'Language Acquisition' },
-		{ title: 'Interfaces with Semantics and Pragmatics', description: 'Interpretation of imperatives ● Non-canonical uses of imperative clauses ● Expressive language in expletive negation clauses.', field: 'Interfaces' },
+		{ title: 'Interfaces with Semantics and Pragmatics', description: 'Interpretation of imperatives at the interfaces ● Non-canonical uses of imperative clauses ● Expressive language in expletive negation clauses.', field: 'Interfaces' },
 	],
 }
 
@@ -36,6 +36,6 @@ export const template = {
 
 export const seo = {
 	default_title: 'Sarah Rossi',
-	default_description: 'PhD Candidate in Theoretical and Experimental Linguistics at IUSS Pavia. Working on the syntax and acquisition of imperative clauses and negation.',
+	default_description: 'PhD in Theoretical and Experimental Linguistics at IUSS Pavia. Working on the syntax and acquisition of imperative clauses and negation.',
 	default_image: '/images/profilepic.jpeg',
 }
